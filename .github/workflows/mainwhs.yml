@@ -1,17 +1,17 @@
 name: CI-WHS
 
 on:
-  push:
+  # push:
   workflow_dispatch:
   
 jobs:
   build:
-    uses:  --call your resuable workflow
+    uses:  # --call your resuable workflow
     with:
       project: "My william project"
  
   test:
-    uses:
+    uses: # --call your resuable workflow
     with:
       project: "My william project"
       
@@ -19,7 +19,7 @@ jobs:
     needs:
     - build
     - test
-    uses:
+    uses: # --call your resuable workflow
     with:
       projectPackage: "Mywilliamproject.zip"
       environment: dev
