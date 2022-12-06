@@ -1,0 +1,25 @@
+name: CI-DT
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build-dt:
+    uses: ./.github/workflows/build-dt.yml
+    with:
+      project: "Dan Ta Project"
+    
+  test-dt:
+    uses: ./.github/workflows/test-dt.yml
+    with:
+      project: "Dan Ta Project"
+    
+  deploy-dt:
+    needs:
+      - build-dt
+      - test-dt
+    uses: ./.github/workflows/deploy-dt.yml
+    with:
+      projectPackage: "DanTaProject.zip"
+      environment: dev
+      cloud: AWS
