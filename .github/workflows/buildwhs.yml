@@ -1,0 +1,14 @@
+name: BuildWHS
+
+on:
+  workflow_call:
+    inputs:
+      project:
+        required: true
+        type: string
+ 
+ jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Building project ${{ inputs.project }}
