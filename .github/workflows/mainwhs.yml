@@ -1,0 +1,27 @@
+name: CI-WHS
+
+on:
+  push:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    uses:  --call your resuable workflow
+    with:
+      project: "My william project"
+ 
+  test:
+    uses:
+    with:
+      project: "My william project"
+      
+   deployDev:
+    needs:
+    - build
+    - test
+    uses:
+    with:
+      projectPackage: "Mywilliamproject.zip"
+      environment: dev
+      cloud: AWS
+      
