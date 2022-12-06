@@ -6,7 +6,7 @@ on:
   
 jobs:
   build:
-    uses:  # --call your resuable workflow
+    uses: whsdemo/symplr-demo/.github/workdlows/build.yml@v1
     with:
       project: "My william project"
  
