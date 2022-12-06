@@ -11,5 +11,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: build
+      - name: test
         run: echo ${{ inputs.project }}
