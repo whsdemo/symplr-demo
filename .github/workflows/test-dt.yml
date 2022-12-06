@@ -1,0 +1,15 @@
+name: CI-DT-Test
+
+on:
+  workflow_call:
+    inputs:
+      project:
+        type: string
+        description: Name of project
+        required: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: echo ${{ inputs.project }}
